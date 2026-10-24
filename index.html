@@ -202,6 +202,10 @@ ul,ol{margin:0;padding:0}
 .expertise{padding-block:120px 110px}
 .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;margin-top:64px}
 .exp{min-width:0;border-top:1px solid var(--line);padding-top:22px}
+.exp-head{display:flex;align-items:center;gap:16px}
+.exp-ic{flex:none;width:48px;height:48px;border:1px solid var(--line);border-radius:14px;display:grid;place-items:center;color:var(--fg);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,0));transition:transform .5s var(--ease),border-color .5s}
+.exp-ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.exp:hover .exp-ic{transform:translateY(-2px);border-color:rgba(255,255,255,.3)}
 .exp h3{font-size:24px;letter-spacing:-.02em;line-height:1.15}
 .exp p{margin-top:10px;color:var(--fg-2);font-size:16px;max-width:46ch}
 .exp ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
@@ -677,26 +681,25 @@ ul,ol{margin:0;padding:0}
     <div class="chapter reveal">
       <p class="kicker">Expertise</p>
       <h2>Four things I'm trusted with.</h2>
-      <p class="sub">Most of my work has had one thing in common: the framework did not exist yet. It had to be designed, agreed, run and handed over.</p>
     </div>
     <div class="exp-grid">
       <div class="exp">
-        <h3>Strategy execution and enterprise planning</h3>
+        <div class="exp-head"><span class="exp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span><h3>Strategy execution and enterprise planning</h3></div>
         <p>Annual operating plans, business-plan cascades, KPI frameworks and the governance that keeps a plan live through the year.</p>
         <ul><li>Annual operating planning</li><li>KPIs and target setting</li><li>Performance management</li><li>Business case assessment</li><li>Benchmarking</li></ul>
       </div>
       <div class="exp">
-        <h3>EPMO and portfolio governance</h3>
+        <div class="exp-head"><span class="exp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12h5M16.5 12h5"/><path d="M12 7.5l4.5 4.5-4.5 4.5L7.5 12z"/><circle cx="2.5" cy="12" r="1.1" fill="currentColor" stroke="none"/><circle cx="21.5" cy="12" r="1.1" fill="currentColor" stroke="none"/><path d="M10.3 12l1.2 1.2 2.3-2.4"/></svg></span><h3>EPMO and portfolio governance</h3></div>
         <p>Lifecycles, stage gates, reporting and demand management across project, portfolio and initiative levels.</p>
         <ul><li>EPMO and PMO design</li><li>Portfolio governance</li><li>Strategic risk management</li><li>Technology portfolio management</li><li>MS Project, Jira</li></ul>
       </div>
       <div class="exp">
-        <h3>Transformation and change</h3>
+        <div class="exp-head"><span class="exp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="17" r="2.2"/><circle cx="19" cy="17" r="2.2"/><path d="M10.9 6.9L6.3 15M13.1 6.9l4.6 8.1M7.2 17h9.6"/></svg></span><h3>Transformation and change</h3></div>
         <p>Stakeholder diagnostics at scale, change networks, communications and the adoption measures that show whether any of it worked.</p>
         <ul><li>Change management</li><li>Stakeholder data and analytics</li><li>Power BI</li><li>Change networks</li><li>Workshops and engagement</li></ul>
       </div>
       <div class="exp">
-        <h3>Executive advisory and operating models</h3>
+        <div class="exp-head"><span class="exp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8.5" y="3" width="7" height="5" rx="1.2"/><rect x="2.5" y="16" width="6" height="5" rx="1.2"/><rect x="9" y="16" width="6" height="5" rx="1.2"/><rect x="15.5" y="16" width="6" height="5" rx="1.2"/><path d="M12 8v4M5.5 16v-2.5h13V16M12 12v4"/></svg></span><h3>Executive advisory and operating models</h3></div>
         <p>Decision packs, pre-reads and CEO-tailored operating models for the top of the organisation.</p>
         <ul><li>CEO office advisory</li><li>Target operating model design</li><li>Organisation design</li><li>Board and ExCo materials</li><li>Capability building</li></ul>
       </div>
@@ -708,8 +711,7 @@ ul,ol{margin:0;padding:0}
 <section class="experience" id="experience" aria-label="Experience">
   <div class="wrap">
     <div class="chapter reveal">
-      <p class="kicker">Experience</p>
-      <h2>Five years, four environments, one direction.</h2>
+      <h2>Experience</h2>
     </div>
 
     <div class="xp">
@@ -836,7 +838,7 @@ ul,ol{margin:0;padding:0}
       <ul class="cred-grid">
         <li class="cred"><div class="logo"><img src="img/logos/pnu_mark.svg" alt="Princess Nourah bint Abdulrahman University logo"></div><b>Princess Nourah bint Abdulrahman University</b><span>B.A. English Language Translation, first class honours, GPA 4.87 of 5.0</span><em>2016 to 2021</em></li>
         <li class="cred"><div class="logo"><img src="img/logos/nh.svg" alt="North Highland logo"></div><b>North Highland UK Academy</b><span>Strategy and Organisational Design Practice: internal consulting and leadership development</span><em>2025 to present</em></li>
-        <li class="cred"><div class="logo"><img src="img/logos/pmi_mark.svg" alt="Project Management Institute logo"></div><b>Project Management Institute</b><span>Project Management Professional (PMP), in progress</span><em>2026</em></li>
+        <li class="cred"><div class="logo"><img src="img/logos/pmi_mark.svg" alt="Project Management Institute logo"></div><b>Project Management Institute</b><span>Project Management Professional (PMP), in progress</span><em>2026 – present</em></li>
         <li class="cred"><div class="logo"><img src="img/logos/anthropic.svg" alt="Anthropic logo"></div><b>Anthropic</b><span>AI Fluency: Framework and Foundations; Claude 101</span><em>2026</em></li>
         <li class="cred"><div class="logo"><img src="img/logos/sdaia.svg" alt="Saudi Data and AI Authority logo"></div><b>Saudi Data and AI Authority</b><span>Artificial Intelligence Concepts and Advanced Applications</span><em>2025</em></li>
         <li class="cred"><div class="logo"><img src="img/logos/arco.png" alt="Arab Red Crescent and Red Cross Organization logo"></div><b>Arab Red Crescent and Red Cross Organization</b><span>Cooperative training, Natural Disasters Center</span><em>2020 to 2021</em></li>
@@ -854,7 +856,6 @@ ul,ol{margin:0;padding:0}
 <section class="contact" id="contact" aria-label="Contact">
   <div class="wrap">
     <h2>Let's talk.</h2>
-    <p class="lede">If you're hiring for strategy execution, operating models or transformation, I'd like to hear about it. Open to travel.</p>
     <div class="contact-row">
       <span class="email"><a href="mailto:sahabsaleeh@gmail.com" id="emailText">sahabsaleeh@gmail.com</a><button id="copyBtn" type="button">Copy</button></span>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/sahab-soubih" target="_blank" rel="noopener">LinkedIn</a>
