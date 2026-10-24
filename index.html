@@ -122,11 +122,15 @@ ul,ol{margin:0;padding:0}
 @keyframes rise{to{opacity:1;transform:none}}
 @keyframes fadein{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
 @media (max-width:899px){
-  .hero{min-height:0;padding-top:calc(var(--nav-h) + 8px)}
-  .hero-in{grid-template-columns:1fr;gap:0}
-  .hero-fig{order:-1;height:auto;min-height:0;margin-top:8px}
-  .hero-fig img{width:min(50%,195px);height:auto;max-width:100%}
-  .hero-copy{padding-block:8px 48px}
+  /* phone: same scene as desktop, stacked. Words first, then she stands at the foot of the screen in the light, hem dissolving into the numbers. */
+  .hero{min-height:100svh;padding-top:calc(var(--nav-h) + 8px);align-items:end}
+  .hero-in{display:flex;flex-direction:column;gap:0;min-height:calc(100svh - var(--nav-h) - 8px)}
+  .hero-fig{order:0;height:auto;min-height:0;margin:auto 0 0;align-items:flex-end;justify-content:flex-end;padding-right:4px}
+  .hero-fig img{width:min(64%,250px);height:auto;max-width:100%}
+  .hero-copy{padding-block:12px 0}
+  .hero-lede{margin-top:20px;font-size:16px;line-height:1.45}
+  .hero-cta{margin-top:26px}
+  .hero-role{margin-bottom:20px}
   .hero h1{max-width:none}
   .hero-scroll{display:none}
 }
@@ -963,7 +967,7 @@ function Light(canvas,cfg){
 }
 /* the hero light sits exactly behind the centre of the head: a fixed point in the portrait, followed every frame */
 var heroImgEl=$('#heroImg');
-Light($('#lightHero'),{desk:{cx:.79,cy:.40,scale:.7,strength:1},phone:{cx:.5,cy:.22,scale:.55,strength:.9},delay:2400,introDur:2200,parallax:0,anchorEl:heroImgEl,refEl:$('.hero'),
+Light($('#lightHero'),{desk:{cx:.79,cy:.40,scale:.7,strength:1},phone:{cx:.5,cy:.22,scale:.75,strength:.95},delay:2400,introDur:2200,parallax:0,anchorEl:heroImgEl,refEl:$('.hero'),
   anchor:function(cv){var ir=heroImgEl.getBoundingClientRect(),cr=cv.getBoundingClientRect();if(!ir.width)return null;return {x:ir.left-cr.left+ir.width*.48,y:ir.top-cr.top+ir.height*.2}}});
 var contactEl=$('#contact');
 Light($('#lightContact'),{desk:{cx:.82,cy:.5,scale:.9,strength:.9},phone:{cx:.85,cy:.7,scale:.8,strength:.8},delay:200,introDur:2400,parallax:28,refEl:contactEl,
