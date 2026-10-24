@@ -277,11 +277,14 @@ ul,ol{margin:0;padding:0}
 @media (max-width:899px){.about{padding-block:80px}.edu{margin-top:72px}.cred-grid{grid-template-columns:1fr;gap:12px}}
 
 /* contact */
-.quote{padding-block:140px;border-top:1px solid var(--line-2);text-align:center}
+/* closing = quote + contact: one dark field, one light rising from the contact corner up through the quote */
+.closing{position:relative;overflow:hidden;background:var(--bg)}
+.closing .light{-webkit-mask-image:linear-gradient(transparent,#000 240px);mask-image:linear-gradient(transparent,#000 240px)}
+.quote{position:relative;z-index:1;padding-block:160px 120px;text-align:center}
 .quote .q{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(38px,6vw,84px);line-height:1.05;letter-spacing:-.02em}
 .quote .qa{margin-top:22px;font-size:14px;color:var(--fg-3)}
-@media (max-width:899px){.quote{padding-block:96px}}
-.contact{position:relative;overflow:hidden;padding-block:120px 80px;border-top:1px solid var(--line-2)}
+@media (max-width:899px){.quote{padding-block:110px 72px}}
+.contact{position:relative;padding-block:80px 80px}
 .contact .wrap{position:relative;z-index:1}
 .contact h2{font-size:clamp(44px,7vw,110px);letter-spacing:-.04em;line-height:.96}
 .contact .lede{margin-top:24px;font-size:clamp(17px,1.4vw,20px);color:var(--fg-2);max-width:48ch}
@@ -291,7 +294,7 @@ ul,ol{margin:0;padding:0}
 .email button{font-size:13px;padding:6px 12px;border-radius:999px;background:var(--surface);color:var(--fg-2);transition:color .2s,background .2s}
 .email button:hover{color:var(--fg);background:var(--surface-2)}
 .foot{margin-top:96px;padding-block:40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--fg-3);border-top:1px solid var(--line-2)}
-@media (max-width:899px){.contact{padding-block:80px 56px}}
+@media (max-width:899px){.contact{padding-block:40px 56px}}
 
 /* sheet (the paper modal) */
 .sheet{position:fixed;inset:0;z-index:80;display:flex;align-items:flex-end;justify-content:center}
@@ -842,12 +845,13 @@ ul,ol{margin:0;padding:0}
   </div>
 </section>
 
+<div class="closing">
+<canvas class="light" id="lightContact" aria-hidden="true"></canvas>
 <section class="quote" aria-label="In her words">
-  <div class="wrap"><p class="q">“My work speaks for me.”</p><p class="qa">Sahab Soubih</p></div>
+  <div class="wrap reveal"><p class="q">“My work speaks for me.”</p><p class="qa">Sahab Soubih</p></div>
 </section>
 
 <section class="contact" id="contact" aria-label="Contact">
-  <canvas class="light" id="lightContact" aria-hidden="true"></canvas>
   <div class="wrap">
     <h2>Let's talk.</h2>
     <p class="lede">If you're hiring for strategy execution, operating models or transformation, I'd like to hear about it. Open to travel.</p>
@@ -862,6 +866,7 @@ ul,ol{margin:0;padding:0}
     <span>2026</span>
   </div>
 </section>
+</div>
 
 </main>
 
@@ -912,7 +917,7 @@ function Light(canvas,cfg){
   function resize(){var dpr=Math.min(1.5,window.devicePixelRatio||1);w=canvas.clientWidth;h=canvas.clientHeight;rw=ref.clientWidth||w;rh=ref.clientHeight||h;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);pick();draw()}
   function ease(x){return 1-Math.pow(1-x,3)}
   function centre(){
-    if(cfg.anchor){var c=cfg.anchor(canvas);if(c)return c}
+    if(cfg.anchor){var c=cfg.anchor(canvas);if(c)return {x:c.x+px,y:c.y+py}}
     return {x:w*o.cx+px,y:h*o.cy+py};
   }
   function draw(){
@@ -960,7 +965,9 @@ function Light(canvas,cfg){
 var heroImgEl=$('#heroImg');
 Light($('#lightHero'),{desk:{cx:.79,cy:.40,scale:.7,strength:1},phone:{cx:.5,cy:.22,scale:.55,strength:.9},delay:2400,introDur:2200,parallax:0,anchorEl:heroImgEl,refEl:$('.hero'),
   anchor:function(cv){var ir=heroImgEl.getBoundingClientRect(),cr=cv.getBoundingClientRect();if(!ir.width)return null;return {x:ir.left-cr.left+ir.width*.48,y:ir.top-cr.top+ir.height*.2}}});
-Light($('#lightContact'),{desk:{cx:.82,cy:.58,scale:.9,strength:.9},phone:{cx:.85,cy:.78,scale:.8,strength:.8},delay:200,introDur:2000,parallax:28});
+var contactEl=$('#contact');
+Light($('#lightContact'),{desk:{cx:.82,cy:.5,scale:.9,strength:.9},phone:{cx:.85,cy:.7,scale:.8,strength:.8},delay:200,introDur:2400,parallax:28,refEl:contactEl,
+  anchor:function(cv){var o=(window.innerWidth<900?this.phone:this.desk),r=contactEl.getBoundingClientRect(),cr=cv.getBoundingClientRect();return {x:r.left-cr.left+r.width*o.cx,y:r.top-cr.top+r.height*o.cy}}});
 
 /* ---------- keys ---------- */
 (function(){
