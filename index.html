@@ -102,10 +102,10 @@ ul,ol{margin:0;padding:0}
 .opening .light{-webkit-mask-image:linear-gradient(#000 calc(100% - 160px),transparent);mask-image:linear-gradient(#000 calc(100% - 160px),transparent)}
 .hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;width:100%;max-width:1180px;margin-inline:auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
 .hero-copy{position:relative;z-index:2;padding-block:40px}
-.hero-name{font-size:15px;color:var(--fg-2);margin-bottom:6px}
-.hero-def{font-size:12px;color:var(--fg-3);margin-bottom:10px;letter-spacing:.01em}
-.hero-role{font-size:15px;color:var(--fg-2);margin-bottom:28px}
-.hero-def [lang="ar"]{font-size:13px;margin-right:6px;color:var(--fg-2)}
+.hero-name{font-size:22px;color:var(--fg-2);margin-bottom:10px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.hero-def{font-size:12px;color:var(--fg-3);letter-spacing:.01em;font-style:italic}
+.hero-role{font-size:19px;color:var(--fg-2);margin-bottom:28px}
+.hero-def [lang="ar"]{font-size:13px;margin-right:6px;color:var(--fg-2);font-style:normal}
 .hero-name strong{color:var(--fg);font-weight:600}
 .hero-in>*{min-width:0}
 .hero h1{font-size:clamp(40px,5.6vw,80px);line-height:1;letter-spacing:-.035em;font-weight:600;max-width:14ch}
@@ -555,8 +555,7 @@ ul,ol{margin:0;padding:0}
 <section class="hero" aria-label="Introduction">
   <div class="hero-in">
     <div class="hero-copy">
-      <p class="hero-name line d1"><strong>Sahab Soubih</strong></p>
-      <p class="hero-def line d1"><span lang="ar">سَحاب</span> sahab, noun. Arabic for clouds.</p>
+      <p class="hero-name line d1"><strong>Sahab Soubih</strong> <em class="hero-def"><span lang="ar">سَحاب</span> sahab, noun. Arabic for clouds.</em></p>
       <p class="hero-role line d1">Business consultant</p>
       <h1 class="line d2">Turning vision into operating reality.</h1>
       <p class="hero-lede line d3">Five years inside the organizations building Vision 2030: a giga-project, a government health transformation, a global mega-event, a PIF portfolio company and greenfield Vision initiatives. I work best in the gap between a strategy on paper and an organization that has to run it: pinpointing what holds the plan back, building the engine that gets it moving, and handing it over so it keeps running.</p>
