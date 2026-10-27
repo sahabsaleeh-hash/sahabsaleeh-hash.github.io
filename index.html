@@ -224,9 +224,8 @@ ul,ol{margin:0;padding:0}
 .key::after{content:"";position:absolute;left:14%;right:14%;top:5px;height:30%;border-radius:18px 18px 40% 40%;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,0));pointer-events:none}
 .key span,.key small{position:relative;z-index:1}
 .key .ki{position:absolute;top:20px;left:20px;width:42px;height:42px;object-fit:contain;z-index:1;filter:grayscale(1);opacity:.9;transition:filter .45s var(--ease),opacity .45s}
-.key .ki.mono{filter:invert(1)}
+.key .ki.mono{filter:grayscale(1) brightness(3)}
 .key:hover .ki{filter:none;opacity:1}
-.key:hover .ki.mono{filter:invert(1)}
 .key span{font-size:16px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
 .key small{font-size:11.5px;color:var(--fg-2);margin-top:3px;line-height:1.3}
 .key.pre{opacity:0;transform:translateY(34px) rotateX(-18deg)}
@@ -242,7 +241,8 @@ ul,ol{margin:0;padding:0}
 .xp{display:grid;grid-template-columns:260px 1fr;gap:32px 64px;margin-top:72px}
 .xp-org{position:sticky;top:calc(var(--nav-h) + 24px);align-self:start}
 .xp-logo{height:34px;margin-bottom:14px;display:flex;align-items:center}
-.xp-logo img{height:100%;width:auto;max-width:200px;object-fit:contain;object-position:left}
+.xp-logo img{height:100%;width:auto;max-width:200px;object-fit:contain;object-position:left;filter:grayscale(1);transition:filter .45s var(--ease)}
+.xp:hover .xp-logo img{filter:none}
 .xp-logo+h3{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .xp-org h3{font-size:22px;letter-spacing:-.02em}
 .xp-org .role{display:block;margin-top:4px;font-size:16px}
@@ -574,7 +574,7 @@ ul,ol{margin:0;padding:0}
   <div class="wrap proof-grid">
     <div class="stat"><b data-count="11">11</b><span>kinds of framework I design, implement and hand over</span></div>
     <div class="stat"><b data-count="189000" data-suffix="+">189,000+</b><span>stakeholders reached in one transformation program</span></div>
-    <div class="stat"><b data-count="2000" data-suffix="+">2,000+</b><span>change agents designed, governed and mobilized</span></div>
+    <div class="stat"><b data-count="2000" data-suffix="+">2,000+</b><span>volunteer change agents brought together and led in one network</span></div>
     <div class="stat"><b data-count="10" data-suffix="+">10+</b><span>capability workshops delivered to client teams</span></div>
   </div>
 </section>

@@ -1,17 +1,10 @@
-<svg viewBox="1.89 -0.388 340.4 31.6" xmlns="http://www.w3.org/2000/svg">
+<svg fill="#012D54" viewBox="1.89 -0.388 340.4 31.6" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <style type="text/css">
-	.st0{fill:#012D54;}
-	.st1{fill:#04A0B9;}
-	.st2{clip-path:url(#SVGID_2_);fill:#012D54;}
-	.st3{clip-path:url(#SVGID_4_);fill:#012D54;}
-	.st4{clip-path:url(#SVGID_6_);fill:#012D54;}
-	.st5{clip-path:url(#SVGID_8_);fill:#012D54;}
-</style>
+    
   </defs>
   <g transform="matrix(1, 0, 0, 1, -2.309554, -0.788333)">
     <polygon points="22.4,1 22.4,17.7 13.1,8.9 4.2,17.8 4.2,31.3 10.3,31.3 10.3,14.5 28.5,31.8 28.5,1 &#9;"/>
-    <polygon points="4.2,0.4 4.2,17.8 13.1,8.9 &#9;"/>
+    <polygon fill="#04A0B9" points="4.2,0.4 4.2,17.8 13.1,8.9 &#9;"/>
     <g>
       <defs>
         <rect id="SVGID_1_" x="4.2" y="1" width="340.3" height="31"/>
