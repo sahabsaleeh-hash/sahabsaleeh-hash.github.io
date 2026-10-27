@@ -204,18 +204,25 @@ ul,ol{margin:0;padding:0}
 
 /* expertise */
 .expertise{padding-block:120px 110px}
-.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;margin-top:64px}
-.exp{min-width:0;border-top:1px solid var(--line);padding-top:22px}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:56px}
+/* expertise cards: dark glass, a light that follows the pointer, a faint index in the corner */
+.exp{position:relative;min-width:0;border:1px solid var(--line-2);border-radius:24px;padding:28px 28px 26px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.012));overflow:hidden;transition:transform .55s var(--ease),border-color .55s var(--ease),box-shadow .55s var(--ease)}
+.exp::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,70%) var(--my,0%),rgba(255,255,255,.11),transparent 62%);opacity:0;transition:opacity .5s var(--ease)}
+.exp::after{content:"";position:absolute;left:28px;right:28px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);opacity:.7}
+.exp:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
+.exp:hover::before{opacity:1}
+.exp-num{position:absolute;top:26px;right:28px;font-size:12px;letter-spacing:.12em;color:var(--fg-3);font-variant-numeric:tabular-nums}
+.exp>*:not(.exp-num){position:relative}
 .exp-head{display:flex;align-items:center;gap:16px}
 .exp-ic{flex:none;width:48px;height:48px;border:1px solid var(--line);border-radius:14px;display:grid;place-items:center;color:var(--fg);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,0));transition:transform .5s var(--ease),border-color .5s}
 .exp-ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
-.exp:hover .exp-ic{transform:translateY(-2px);border-color:rgba(255,255,255,.3)}
+.exp:hover .exp-ic{transform:translateY(-2px);border-color:rgba(255,255,255,.35);box-shadow:0 0 40px rgba(255,255,255,.12)}
 .exp h3{font-size:24px;letter-spacing:-.02em;line-height:1.15}
 .exp p{margin-top:10px;color:var(--fg-2);font-size:16px;max-width:46ch}
 .exp ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
 .exp li{font-size:13px;color:var(--fg-2);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
-.exp-foot{margin-top:56px;text-align:center;color:var(--fg-2);font-size:16px;max-width:60ch;margin-inline:auto}
-@media (max-width:899px){.expertise{padding-block:80px}.exp-grid{grid-template-columns:1fr;gap:32px;margin-top:40px}}
+.exp-foot{margin-top:48px;text-align:center;color:var(--fg-2);font-size:16px;max-width:60ch;margin-inline:auto}
+@media (max-width:899px){.expertise{padding-block:80px}.exp-grid{grid-template-columns:1fr;gap:12px;margin-top:36px}.exp{padding:22px 20px 20px;border-radius:20px}.exp-num{top:22px;right:20px}.exp h3{font-size:21px;padding-right:24px}}
 
 /* tools (3D keys) */
 .keys{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:64px;perspective:1400px}
@@ -686,22 +693,22 @@ ul,ol{margin:0;padding:0}
       <h2>Four things I'm trusted with.</h2>
     </div>
     <div class="exp-grid">
-      <div class="exp">
+      <div class="exp reveal" style="transition-delay:0ms"><span class="exp-num" aria-hidden="true">01</span>
         <div class="exp-head"><span class="exp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8.5" y="3" width="7" height="5" rx="1.2"/><rect x="2.5" y="16" width="6" height="5" rx="1.2"/><rect x="9" y="16" width="6" height="5" rx="1.2"/><rect x="15.5" y="16" width="6" height="5" rx="1.2"/><path d="M12 8v4M5.5 16v-2.5h13V16M12 12v4"/></svg></span><h3>Executive advisory and operating models</h3></div>
         <p>Provides CEO-level recommendations and solutions: decision-ready packs and pre-reads, and the operating model that makes the plan run.</p>
         <ul><li>Executive advisory</li><li>Target operating model design</li><li>Organization design</li><li>Board and ExCo materials</li><li>Capability building</li></ul>
       </div>
-      <div class="exp">
+      <div class="exp reveal" style="transition-delay:90ms"><span class="exp-num" aria-hidden="true">02</span>
         <div class="exp-head"><span class="exp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span><h3>Strategy execution and enterprise planning</h3></div>
         <p>Turns strategy into a funded, governed plan: built a first annual planning framework from zero and ran it across every division.</p>
         <ul><li>Annual operating planning</li><li>KPIs and target setting</li><li>Performance management</li><li>Business case assessment</li><li>Benchmarking</li></ul>
       </div>
-      <div class="exp">
+      <div class="exp reveal" style="transition-delay:180ms"><span class="exp-num" aria-hidden="true">03</span>
         <div class="exp-head"><span class="exp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12h5M16.5 12h5"/><path d="M12 7.5l4.5 4.5-4.5 4.5L7.5 12z"/><circle cx="2.5" cy="12" r="1.1" fill="currentColor" stroke="none"/><circle cx="21.5" cy="12" r="1.1" fill="currentColor" stroke="none"/><path d="M10.3 12l1.2 1.2 2.3-2.4"/></svg></span><h3>EPMO and portfolio governance</h3></div>
         <p>Makes portfolios governable: lifecycles, gates and reporting for a mega-event technology portfolio, and a new EPMO run through to handover.</p>
         <ul><li>EPMO and PMO design</li><li>Portfolio governance</li><li>Strategic risk management</li><li>Technology portfolio management</li><li>MS Project, Jira</li></ul>
       </div>
-      <div class="exp">
+      <div class="exp reveal" style="transition-delay:270ms"><span class="exp-num" aria-hidden="true">04</span>
         <div class="exp-head"><span class="exp-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="17" r="2.2"/><circle cx="19" cy="17" r="2.2"/><path d="M10.9 6.9L6.3 15M13.1 6.9l4.6 8.1M7.2 17h9.6"/></svg></span><h3>Transformation and change</h3></div>
         <p>Delivers change that holds: 189,000+ stakeholders heard and answered with owned interventions, and a 2,000-strong change network led.</p>
         <ul><li>Change management</li><li>Stakeholder data and analytics</li><li>Power BI</li><li>Change networks</li><li>Workshops and engagement</li></ul>
@@ -999,7 +1006,9 @@ $$('[data-count]').forEach(function(el){counted.observe(el)});
 
 /* ---------- reveals (only for elements below the first screen) ---------- */
 if(!reduced){
-  var rev=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target)}})},{threshold:.2});
+  var rev=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.add('in');rev.unobserve(el);if(el.style.transitionDelay)setTimeout(function(){el.style.transitionDelay='0ms'},1200)}})},{threshold:.2});
+  /* expertise cards: the highlight follows the pointer */
+  if(window.matchMedia('(pointer:fine)').matches){$$('.exp').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');c.style.setProperty('--my',((e.clientY-r.top)/r.height*100).toFixed(1)+'%')})})}
   $$('.reveal').forEach(function(el){if(el.getBoundingClientRect().top>window.innerHeight){el.classList.add('pre');rev.observe(el)}});
 }
 
